@@ -88,11 +88,11 @@
 
 ## English
 
-# DKU Programs Hub
+# DKU x XiaoxBao Joint Innovation Projects Hub
 
 ## Repository Purpose
 
-- **Target Audience**: Student teams, mentors, and Project Management Committee (PMC) members participating in the DKU-XiaoxBao community charity project.
+- **Target Audience**: Student teams, mentors, and Project Management Committee (PMC) members participating in the DKU-XiaoxBao community joint innovation charity project.
 - **Core Functions**:
   - **Member Guidance**: Host essential startup documents (e.g., `Program_guideline/1_quick_start_and_must_know.md`) to help newcomers quickly understand project background, roles, and compliance requirements.
   - **Public Information Synchronization**: Centralize public resource links, recommended tools, and important announcements (e.g., `Public_resources/tools_kit_101.md`).
@@ -170,7 +170,7 @@
 
 ## Русский
 
-# DKU x 小x宝创新项目中心 | DKU Центр Проектов
+# DKU x 小x宝创新项目中心 | DKU Центр Проектов | Центр инновационных проектов
 
 ## Назначение репозитория
 
