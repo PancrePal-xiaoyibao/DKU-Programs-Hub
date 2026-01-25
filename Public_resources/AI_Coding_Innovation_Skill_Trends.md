@@ -4,7 +4,7 @@
 
 ## 📊 中文版本
 
-### 一、AI Coding社区中的Skill热度现状
+### 一、AI Coding社区中的Skill热度现I
 
 在快速演进的AI编程生态中，**Skill**已成为社区创新的核心驱动力。根据开源社区数据统计，当前热度最高的Skill类别包括：
 
@@ -37,7 +37,7 @@
 
 ### 二、社区代表性创新案例
 
-#### **案例1：ClinicalTrials靶点检测-抽取-总结-推送全链路Skill**
+#### **案例1：ClinicalTrials靶点检测-抽取-总结-推送全链路Skil（demo案例- 实际实现不同）**  
 
 这是一个完整的创新应用示范，展示了如何通过组合多个Skill构建端到端的智能工作流：
 
@@ -48,7 +48,7 @@
 
 Stage 1: 检测与发布 (Detection & Discovery)
   ↓
-  ├─ Skill: pubmed-data-server
+  ├─ Skill: pubmed-data-server/Clinical_trials_mcp_service
   │  └─ 功能: 监控PubMed/ClinicalTrials.gov最新发布
   │  └─ 输出: 原始论文/试验数据流
   │
@@ -216,438 +216,108 @@ class ClinicalTrialsInnovationSkill:
 
 ---
 
-### 二-A、面向肿瘤患者的创新Skill场景（痛点驱动）
+### 二-B、面向妇科肿瘤患者的创新Skill场景（痛点驱动）
 
-#### **场景1：放疗副反应实时监测与智能预警系统**
+#### **场景4：患者多渠道信息整合与智能提醒系统（妇科肿瘤版）**
 
 **患者痛点**：
-- 📊 放疗是高频长期治疗（6-8周，每周5次），需要往返医院
-- ⚠️ 放疗后常见副反应（皮肤炎症、吞咽困难、疲劳、骨髓抑制）多数患者无法及时识别
-- 🔄 当前模式：患者靠主观感受→纸质记录→下次复诊对比，信息反馈滞后（通常1-2周）
-- 💊 剂量调整依赖医生经验，无个性化实时数据支持
+- 📋 妇科肿瘤患者需要管理多个医院的化疗预约、激素治疗时间、分子检测预约、复诊日期
+- 🏥 信息分散：医院APP、微信、短信、纸质预约卡、临床路径表
+- ❌ 容易遗漏：忘记激素药→激素水平异常；错过分子检测→治疗延误
+- 👨‍👩‍👧 家属也需要实时了解患者化疗周期进度和恢复情况
 
 **创新Skill架构**：
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  放疗副反应实时监测 & 智能预警系统（Radiotherapy Side-Effects AI System）
-└─────────────────────────────────────────────────────────────┘
-
-Layer 1: 多源数据采集 (Multi-source Data Ingestion)
-  ├─ Skill: wearable-data-integration
-  │  └─ 采集: 心率、体温、睡眠、活动量 (Apple Watch / Fitbit / 医院可穿戴)
-  │
-  ├─ Skill: patient-reported-outcomes (PRO)
-  │  └─ 采集: 患者每日主观症状 (痛度、疲劳度、食欲等)
-  │  └─ 频率: 每天2次推送健康问卷（早8点、晚8点）
-  │
-  └─ Skill: hospital-data-connector
-     └─ 采集: 放疗剂量、血象数据、影像报告
-     └─ 频率: 实时同步
-
-Layer 2: 数据清洗 & 关联 (Data Cleaning & Correlation)
-  ├─ Skill: temporal-data-alignment
-  │  └─ 功能: 对齐多源时间序列数据
-  │  └─ 处理: 缺失数据填充、异常值检测
-  │
-  └─ Skill: patient-context-enrichment
-     └─ 增强: 关联患者基因型、放疗部位、既往病史
-
-Layer 3: AI预测与预警 (AI Prediction & Alert)
-  ├─ Skill: radiotherapy-toxicity-predictor
-  │  └─ 模型: 放疗毒性预测模型 (基于NTCP理论)
-  │  └─ 输出: 24小时内副反应风险等级 (低/中/高)
-  │  └─ 准确性: 灵敏度>90%，特异性>85%
-  │
-  └─ Skill: sequential-thinking (深度推理)
-     └─ 分析: 为什么会出现这个副反应？
-     └─ 建议: 剂量调整、支持治疗、转科建议
-
-Layer 4: 智能推送 & 干预 (Intelligent Push & Intervention)
-  ├─ Skill: n8n-wechat-automation
-  │  └─ 推送: 微信实时预警
-  │  ├─ 高风险: 立即通知患者+医生，建议就医
-  │  ├─ 中风险: 建议居家管理，提供护理指导
-  │  └─ 低风险: 日报汇总，定期查看
-  │
-  ├─ Skill: clinical-guidance-generator
-  │  └─ 生成: 患者易懂的管理指南
-  │  └─ 格式: 图文+视频+语音
-  │
-  └─ Skill: doctor-dashboard-generator
-     └─ 生成: 医生决策支持面板
-     └─ 展示: 患者副反应热力图、趋势分析、优化建议
-
-Layer 5: 反馈闭环 (Feedback Loop)
-  └─ 患者标注实际结果 → 模型持续优化 → 提升预测准确性
-```
-
-**具体数据指标**：
-
-| 副反应类型 | 监测指标 | 数据源 | 预警阈值 | 干预方式 |
-|----------|---------|-------|---------|---------|
-| 放射性皮炎 | 皮肤温度↑、患者图片上传 | 可穿戴+摄像头MCP | Temp>38°C或红斑面积>20cm² | 建议用药、冷敷方案 |
-| 吞咽困难 | 进食记录↓、体重↓3% | PRO问卷+医院EHR | 症状评分>3或1周体重↓>1kg | 营养干预、吞咽训练视频 |
-| 骨髓抑制 | WBC↓、血红蛋白↓ | 实验室数据自动推送 | WBC<2000或血小板<50000 | 医生警告、可能暂停治疗 |
-| 放疗疲劳 | 活动量↓、睡眠质量↓ | 可穿戴+PRO | 7天活动量下降>30% | 运动处方、疲劳管理课程 |
+- Layer 1: 多渠道数据聚合 (hospital-ehr-connector + pharmacy-integration + insurance-data-connector)
+- Layer 2: 统一妇科治疗模型 (月经周期感知、激素治疗窗口、化疗周期间隔)
+- Layer 3: 智能提醒与推送 (context-aware-reminder with 妇科特异性)
+  - 例: "明天是化疗后第7天，乳房自检时间。同时避免性生活以防感染"
+- Layer 4: 激素管理追踪 (hormone-level-tracking with 阈值告警)
+  - 例: "HER2阳性患者，记得按时注射赫赛汀，下次注射距离上次需≥3周"
+- Layer 5: 生活质量反馈 (lifestyle-questionnaire 特含月经恢复、性功能、生育意愿)
 
 **患者获益**：
-- 🎯 从被动等待→主动监测：由每2周复诊↓为每日实时反馈
-- 🛡️ 从发生→预防：提前24-48小时发现问题，减少严重并发症65-80%
-- 📱 从多工具→一站式：微信+App集成，无需奔波对比多个系统
-- 💪 从医生决策→共同决策：患者了解自己数据，提升治疗依从性
+- ⏰ 化疗合规性↑90%（不错过任何化疗周期）
+- 🎯 激素治疗规范性↑85%（严格按时间间隔）
+- 👨‍👩‍👧 配偶参与度↑，家庭理解度↑
+- 📊 生活质量数据积累，帮助医生调整治疗强度
 
 ---
 
-#### **场景2：患者多渠道信息整合与智能提醒系统**
+#### **场景5：个性化治疗方案生成与妇科特异性评估系统**
 
 **患者痛点**：
-- 📋 患者需要管理多个医院的挂号号、检查预约、用药时间、复诊日期
-- 🏥 信息分散：医院APP、微信、短信、纸质预约卡、医嘱本
-- ❌ 容易遗漏：忘记吃药→血象异常；错过复诊→治疗延误
-- 👨‍👩‍👧 家属也需要实时了解患者状态，但当前无法看到统一视图
+- 🤔 妇科肿瘤治疗涉及多个学科(肿瘤科、妇科、内分泌科)，患者不知道为何要做某个治疗
+- 🔀 卵巢癌化疗后是否需要激素治疗？子宫内膜癌是否需要放疗？决策复杂
+- 📈 治疗效果评估：CA125下降多少算有效？如何理解影像报告？
+- 💰 长期激素治疗费用预算不清楚（可能需要5-10年）
 
 **创新Skill架构**：
+- Layer 1: 妇科患者信息结构化 (patient-profiling with 激素敏感性、生育状态、绝经状态)
+- Layer 2: 多学科方案对比 (multi-option-comparison)
+  - 卵巢癌：化疗 vs 化疗+靶向 vs 化疗+免疫
+  - 子宫内膜癌：手术+观察 vs 手术+化疗 vs 手术+放疗+化疗
+  - 宫颈癌：放疗 vs 化放疗 vs 新辅助化疗+手术
+- Layer 3: 个性化推荐 (考虑生育意愿、绝经状态、心血管风险)
+- Layer 4: 妇科特异性决策支持 (visual-outcome-display with 生存曲线+生育保护选项+激素治疗时间线)
+- Layer 5: 长期管理规划 (cost-tracking-and-projection for 5-10年激素治疗)
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  患者信息整合与智能提醒系统（Patient Info Hub & Smart Reminder）
-└─────────────────────────────────────────────────────────────┘
-
-Layer 1: 多渠道数据聚合 (Multi-Channel Data Aggregation)
-  ├─ Skill: hospital-ehr-connector
-  │  └─ 接入: 医院HIS/EMR系统
-  │  └─ 数据: 挂号记录、检查预约、医嘱、检验报告
-  │
-  ├─ Skill: pharmacy-integration
-  │  └─ 接入: 医院/社区药房系统
-  │  └─ 数据: 处方、用药时间、剂量、配送状态
-  │
-  ├─ Skill: insurance-data-connector
-  │  └─ 接入: 医保/商业保险系统
-  │  └─ 数据: 报销进度、剩余额度、理赔审批
-  │
-  └─ Skill: user-input-calendar
-     └─ 用户手动: 自定义事项、个人备忘
-
-Layer 2: 数据统一建模 (Unified Data Model)
-  └─ 创建患者时间线视图：
-     ├─ 治疗日历: 每周二、四、五放疗，周一周三复诊
-     ├─ 用药计划: 早晚各一次止吐剂，根据血象动态调整
-     ├─ 检查清单: 每周血象，每2周影像评估
-     └─ 重要里程碑: 放疗完成日、评效日期、后续随访计划
-
-Layer 3: 智能提醒与推送 (Smart Reminders)
-  ├─ Skill: context-aware-reminder
-  │  └─ 提前通知: 预约前1天发送确认+路线导航
-  │  └─ 个性化时机: 根据患者习惯（上班族vs宅家患者）调整通知时间
-  │  └─ 内容优化: 不仅是"明天放疗"，而是"明天下午2点放疗，预留45分钟车程"
-  │
-  ├─ Skill: dependency-aware-task
-  │  └─ 链式提醒: 检查前→禁食提醒；用药前→配套护理（如吃药时喝足水）
-  │
-  ├─ Skill: family-sharing-notifications
-  │  └─ 推送给: 患者+配偶+子女
-  │  └─ 权限: 患者控制家属可见范围
-  │
-  └─ Skill: symptom-triggered-alert
-     └─ 触发条件: 患者报告严重症状→立即通知医生+建议就医
-
-Layer 4: 智能问卷与合规性检查 (Compliance Monitoring)
-  ├─ Skill: medication-adherence-tracker
-  │  └─ 监测: 用药情况（通过自动提醒后的应答率）
-  │  └─ 提醒: 超过4小时未确认吃药→弹窗提示
-  │  └─ 反馈: 每周合规性报告给医生
-  │
-  └─ Skill: lifestyle-questionnaire
-     └─ 每天2次简短问卷: 饮食、睡眠、症状、心理状态
-     └─ AI分析: 识别风险信号（如抑郁症状加重）
-
-Layer 5: 数据可视化与决策支持 (Visualization & Decision Support)
-  ├─ Skill: patient-dashboard
-  │  └─ 患者视图: 下一步是什么→完成了什么→还需要做什么
-  │  └─ 进度条: 放疗完成度、治疗阶段可视化
-  │
-  └─ Skill: doctor-patient-portal
-     └─ 医生视图: 哪些患者用药依从性差？→主动干预
-     └─ 预警: 患者多天未完成症状问卷→可能出现问题
-```
-
-**核心功能示例**：
-
-```javascript
-// 智能提醒触发逻辑
-const ReminderEngine = {
-  
-  // 用例1：放疗预约提醒
-  radiotherapyReminder: {
-    schedule: "appointment_date - 1 day",
-    channels: ["wechat", "sms", "app_notification"],
-    personalization: {
-      time: getUserPreferredTime(patient), // 根据患者习惯推送
-      content: generateContext(patient, appointment),
-      // → "明天下午2:00，山西省肿瘤医院放疗科
-      //    地址：太原市五一路25号
-      //    导航耗时：35分钟（根据实时路况）
-      //    记得带医保卡和上次放疗单据"
-      extras: {
-        navigation_link: "amap://...", // 高德地图导航
-        parking_info: true, // 停车位信息
-        alternative_transport: true // 公交方案
-      }
-    }
-  },
-
-  // 用例2：用药合规性提醒
-  medicationReminder: {
-    schedule: "每天08:00, 20:00",
-    content: {
-      drug_name: "止吐剂",
-      dosage: "1片",
-      timing: "早饭后30分钟",
-      side_effect_prevention: "配合250ml温水一起服用"
-    },
-    compliance_check: {
-      if_not_confirmed_after: "4小时",
-      action: "→ 升级为弹窗提醒 + 通知家属"
-    }
-  },
-
-  // 用例3：症状异常触发告警
-  symptomAlertTrigger: {
-    condition: "patient.daily_checkin.fever > 38.5°C",
-    immediately: {
-      notify_patient: "立即就医，可能骨髓抑制或感染",
-      notify_doctor: "患者X出现高热，建议复查血象",
-      suggest_action: "前往发热门诊或肿瘤科急诊"
-    }
-  }
-};
-```
-
-**患者与医生获益**：
-- ⏰ 患者：从"记不清"→"永不遗漏"，治疗依从性↑85%
-- 👨‍⚕️ 医生：自动获得患者合规性数据，可提前发现风险（提前3-5天）
-- 👪 家属：有了透明的"患者状态面板"，不再焦虑询问
-- 📊 数据：积累患者真实世界数据，为科研和个性化方案提供基础
+**患者获益**：
+- 🎯 理解多学科决策→治疗依从性↑
+- 📊 清晰的长期治疗时间线→心理预期明确
+- 💪 生育问题有答案→年轻患者信心↑
+- 💰 费用透明→避免中途放弃治疗
 
 ---
 
-#### **场景3：个性化治疗方案生成与效果评估系统**
+#### **场景6：化疗毒性与性/生育功能实时监测系统**
 
 **患者痛点**：
-- 🤔 "为什么医生给我选择这个方案，而不是其他？"患者无法理解决策依据
-- 🔀 多中心就诊时，不同医院给出不同方案建议→患者困惑
-- 📈 治疗效果评估：CT报告要等1-2周→患者焦虑期长
-- 💰 治疗费用不透明：患者不知道后续还要花多少钱
+- 🔄 妇科肿瘤患者化疗常见严重毒性：骨髓抑制、心脏毒性、卵巢功能损害
+- ⚠️ 年轻患者最关心：化疗会不会导致永久性不孕？月经会不会回来？
+- 🚫 目前模式：化疗医生只关注肿瘤效果，对生育功能监测被动，患者焦虑
+- 💔 有些患者放弃生育相关监测，导致错过冻卵等保护机会的时间窗口
 
 **创新Skill架构**：
+- Layer 1: 多源数据采集 (wearable + 月经日历 + 激素水平检测 + 卵巢功能标志物)
+  - 特异性监测：AMH(抗苗勒管激素)、FSH、LH、E2周期变化
+  - 影像监测：经阴彩超评估卵巢储备
+- Layer 2: AI卵巢功能预测 (ovarian-reserve-predictor)
+  - 输入：患者年龄、化疗方案、化疗周期数、基线AMH
+  - 输出：化疗后预期卵巢功能保留率%、恢复月经概率、最佳冻卵时间窗口
+- Layer 3: 性/生育函数监测 (sexuality-fertility-questionnaire)
+  - 每月问卷：月经规律性、性欲、性功能、生育意愿
+  - AI分析：识别功能恢复趋势 vs 永久损害信号
+- Layer 4: 生育保护提醒 (fertility-preservation-alerts)
+  - "化疗前48小时：考虑冷冻卵子？最后机会窗口"
+  - "化疗第3周期：卵巢功能评估，医生建议延迟化疗？"
+  - "化疗完成1个月：月经未来潮，需要激素检测"
+- Layer 5: 长期康复支持 (recovery-coaching)
+  - 化疗后月经恢复指南
+  - 性功能恢复训练和咨询资源
+  - 何时可安全怀孕、高危妊娠监测
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  个性化治疗方案生成与效果评估系统（Personalized Treatment Optimizer）
-└─────────────────────────────────────────────────────────────┘
+**具体监测指标**：
 
-Layer 1: 患者信息结构化 (Patient Profiling)
-  ├─ Skill: genomic-data-integration
-  │  └─ 采集: 基因突变、TMB、MSI、PD-L1表达等
-  │
-  ├─ Skill: clinical-data-structuring
-  │  └─ 采集: 年龄、PS评分、器官功能、并发症
-  │
-  └─ Skill: lifestyle-profile
-     └─ 采集: 工作性质、家庭条件、经济能力、心理状态
+| 监测方面 | 关键指标 | 数据源 | 预警阈值 | 干预建议 |
+|---------|---------|-------|---------|---------|
+| 卵巢储备 | AMH水平 | 血液检测 | AMH<1.0（化疗后） | 考虑生育咨询，评估冻卵必要性 |
+| 月经恢复 | 月经间隔 | 患者日历 | 化疗后>6月未来潮 | 激素检测，评估卵巢功能 |
+| 心脏毒性 | 左心室射血分数 | 超声或核素 | LVEF↓>10% | 停用蒽环类，心脏保护用药 |
+| 性功能 | 性欲、性高潮 | PRO问卷 | 评分>2个月未改善 | 性功能咨询、血管活性药物考虑 |
+| 生育能力 | 排卵正常性、精子形态 | 验血+男伴精液检查 | 无规律排卵+男伴异常 | 不孕不育科转诊 |
 
-Layer 2: 多方案对比分析 (Multi-Option Comparison)
-  ├─ Scheme A: 化疗 + 靶向药
-  │  ├─ 有效率: 45%
-  │  ├─ 中位OS: 14个月
-  │  ├─ 主要副反应: 骨髓抑制、周围神经炎
-  │  └─ 费用: 20万/周期
-  │
-  ├─ Scheme B: 免疫治疗 + 靶向
-  │  ├─ 有效率: 52%
-  │  ├─ 中位OS: 18个月
-  │  ├─ 主要副反应: 免疫相关肺炎、肝炎
-  │  └─ 费用: 25万/周期
-  │
-  └─ Scheme C: 化疗 + 放疗 + 免疫（根据患者适应性）
-     ├─ 有效率: 60%（仅限PS 0-1患者）
-     ├─ 中位OS: 22个月
-     ├─ 主要副反应: 综合毒性
-     └─ 费用: 35万/周期
+**患者获益**：
+- 🎯 从被动等待→主动保护：提前冻卵最佳时机，保留生育机会
+- 📊 清晰的卵巢功能恢复轨迹→心理预期管理
+- 💪 性/生育问题有专业指导→减少心理创伤
+- 👨‍👩‍👧 伴侣知道如何支持→关系维持
 
-Layer 3: 个性化推荐引擎 (Personalized Recommendation)
-  └─ Skill: treatment-recommender-system
-     ├─ 输入: 患者profile（基因型+临床特征+偏好）
-     ├─ 算法: 
-     │  ├─ 基于NCCN指南的规范化推荐
-     │  ├─ 加权患者个体因素（年龄、器官功能、心理接纳度）
-     │  └─ 结合最新文献和中心经验数据
-     └─ 输出: 排序的方案清单 + 理由解释 + 预期结果
-
-Layer 4: 患者理解与决策支持 (Patient-Friendly Decision Support)
-  ├─ Skill: medical-content-translator
-  │  └─ 转化: 医学术语 → 患者易懂语言
-  │  └─ 示例: 
-  │     医学: "晚期非小细胞肺癌，携带EGFR敏感突变"
-  │     患者版: "您的肺癌属于一类对靶向药物敏感的类型，用药效果可能会比较好"
-  │
-  ├─ Skill: visual-outcome-display
-  │  └─ 生成: 生存曲线、副反应风险图、费用对比图表
-  │
-  └─ Skill: patient-preference-elicitation
-     └─ 问卷: "您更看重疗效还是生活质量？"
-     └─ 应用: 根据患者价值观调整推荐权重
-
-Layer 5: 实时效果评估与调适 (Real-time Response Assessment)
-  ├─ Skill: image-ai-analysis
-  │  └─ 功能: AI自动分析CT/MRI，给出初步评估（无需等医生）
-  │  └─ 指标: 
-  │     ├─ 肿瘤缩小幅度
-  │     ├─ 新发转移灶
-  │     └─ 信心度评分（这个结果的可靠性）
-  │
-  ├─ Skill: sequential-thinking
-  │  └─ 推理: 为什么肿瘤没有缩小？
-  │  └─ 分析: 可能原因 → 耐药？影响吸收的因素？
-  │  └─ 建议: 调整方案？加用化疗？转院？
-  │
-  └─ Skill: cost-tracking-and-projection
-     ├─ 已花费: 已用费用统计
-     ├─ 预期费用: 后续疗程预估
-     └─ 医保报销: 实时计算患者自付额
-
-Layer 6: 多中心方案协作 (Multi-Center Consensus)
-  └─ Skill: multi-center-mcp
-     ├─ 上传: 匿名患者案例到多中心库
-     ├─ 查询: "与我类似的患者，其他医院选了什么方案？效果如何？"
-     └─ 输出: 来自5家中心的方案对比（去除医生偏见的证据）
-```
-
-**技术实现示例**：
-
-```python
-class PersonalizedTreatmentOptimizer:
-    
-    def generate_treatment_options(self, patient_data):
-        """根据患者特征生成个性化治疗方案"""
-        
-        # Step 1: 加载临床指南
-        guidelines = self.load_nccn_guidelines(
-            cancer_type=patient_data.cancer_type,
-            stage=patient_data.stage,
-            molecular_profile=patient_data.genomics
-        )
-        
-        # Step 2: 筛选适用方案
-        applicable_schemes = self.filter_schemes(
-            guidelines=guidelines,
-            contraindications=[
-                patient_data.organ_function,
-                patient_data.comorbidities,
-                patient_data.performance_status
-            ]
-        )
-        
-        # Step 3: 查询类似患者数据
-        similar_patients = self.query_similar_patients(
-            demographic=patient_data.demographics,
-            genomics=patient_data.genomics,
-            similarity_threshold=0.8
-        )
-        
-        # Step 4: 计算个性化预后
-        for scheme in applicable_schemes:
-            
-            # 从指南数据提取基线效果
-            baseline_efficacy = scheme.efficacy_rate  # e.g., 45%
-            
-            # 根据患者因素调整
-            adjustment_factor = self.calculate_adjustment(
-                age_factor=self._age_adjustment(patient_data.age),
-                ps_factor=self._performance_status_adjustment(patient_data.ps),
-                organ_factor=self._organ_function_adjustment(patient_data.kidney_function),
-                genetics_factor=self._genomic_adjustment(patient_data.genomics)
-            )
-            
-            # 根据类似患者的真实结果调整
-            real_world_adjustment = self.calculate_rwe(
-                similar_patients=similar_patients,
-                scheme=scheme
-            )
-            
-            # 最终个性化预测
-            personalized_efficacy = (
-                baseline_efficacy * adjustment_factor * real_world_adjustment
-            )
-            
-            scheme.personalized_efficacy = personalized_efficacy
-            scheme.expected_os = self.predict_survival(personalized_efficacy)
-            scheme.adverse_events = self.predict_adverse_events(
-                scheme, patient_data
-            )
-            scheme.estimated_cost = self.calculate_cost(
-                scheme, patient_data.insurance_coverage
-            )
-        
-        # Step 5: 按患者偏好权重排序
-        ranked_schemes = self.rank_by_preference(
-            schemes=applicable_schemes,
-            patient_preference=patient_data.treatment_preference,
-            # 示例: patient_preference = {
-            #   "efficacy_weight": 0.5,
-            #   "quality_of_life_weight": 0.3,
-            #   "cost_weight": 0.2
-            # }
-        )
-        
-        return {
-            "recommended_scheme": ranked_schemes[0],
-            "alternative_schemes": ranked_schemes[1:],
-            "explanation": self.generate_patient_friendly_explanation(
-                ranked_schemes
-            ),
-            "similar_patient_outcomes": similar_patients  # 信心数据
-        }
-    
-    def assess_treatment_response(self, patient_id, imaging_data):
-        """实时评估治疗效果"""
-        
-        # AI自动分析影像
-        image_analysis = self.image_ai_analyzer.analyze(imaging_data)
-        
-        # 生成患者友好的结果
-        patient_summary = {
-            "simple_result": self._translate_to_patient_language(
-                image_analysis.tumor_size_change
-            ),
-            # e.g., "好消息！肿瘤缩小了30%，这是一个很好的信号"
-            
-            "detailed_metrics": {
-                "tumor_size_reduction": image_analysis.tumor_size_change,
-                "response_rate": image_analysis.recist_response,
-                "new_lesions": image_analysis.new_metastases,
-                "confidence_score": image_analysis.ai_confidence
-            },
-            
-            "next_actions": self.generate_next_steps(
-                response=image_analysis,
-                current_scheme=patient_data.treatment_scheme
-            ),
-            # → "保持当前方案继续治疗" / "考虑升级方案" / "可考虑减量以改善生活质量"
-            
-            "cost_implication": self.project_remaining_cost(patient_id)
-        }
-        
-        return patient_summary
-```
-
-**患者与医生获益**：
-- 🎯 患者："我了解了选择这个方案的所有理由"→提升治疗决心
-- 📊 医生："自动生成的方案对比"→节省30%决策时间
-- 🌍 多中心："知道别人怎么选的"→减少医源性焦虑
-- 💡 研究："真实世界数据"→优化未来的治疗指南
+**AI Coding Skills to Leverage**:
+- wearable-data-integration + patient-calendar for 月经追踪
+- sequential-thinking for 卵巢功能恢复推理
+- lifestyle-questionnaire for 性/生育问卷
+- n8n-wechat-automation for 生育保护关键时间点提醒
+- ovarian-reserve-predictor (可以基于sequential-thinking构建)
 
 ---
 
@@ -659,6 +329,9 @@ class PersonalizedTreatmentOptimizer:
 | 领域 | 检测来源 | 核心Skill | 推送目标 |
 |------|---------|----------|---------|
 | 医疗 | PubMed, ClinicalTrials | pubmed-mcp + llm | 医生社区、患者平台 |
+[具体启发思路]
+- 放疗治疗是高频长期医院内外结合的治疗，需要准确，高频率检测，并调整放疗节奏和剂量，处理放疗后的并发症和副作用，患者需要奔波和使用多个工具+人工，能否成为创新来源。
+
 | 金融 | 证券交易所API | financial-mcp + gpt | 投资者平台、企业内网 |
 | 技术 | GitHub趋势 | github-mcp + analysis | 开发者社区、内部Wiki |
 | 学术 | 论文数据库 | arxiv-mcp + summarize | 学术社交网络、机构库 |
@@ -679,7 +352,7 @@ class PersonalizedTreatmentOptimizer:
 
 #### **1. 定义问题与场景**
 ```
-问题: 我的团队/组织在什么方面花费最多重复性工作？
+问题: 患者/家属/志愿者在什么方面花费最多重复性工作？
 场景: 这个工作流涉及哪些工具/平台/数据源？
 ```
 
@@ -698,7 +371,7 @@ class PersonalizedTreatmentOptimizer:
 集中在**特定领域的智能处理逻辑**，而不是基础设施。
 
 #### **5. 开源与共享**
-- 发布到Smithery/npm/PyPI生态
+- 鼓励以社区贡献者身份，发布到skills生态(比如git skill仓库/skills.sh聚合站等)
 - 编写清晰的文档与案例
 - 邀请社区反馈与贡献
 
@@ -834,76 +507,6 @@ Stage 4: Publishing & Distribution
 
 ---
 
-### II-A. Innovation Skill Scenarios for Cancer Patients (Pain-Point Driven)
-
-#### **Scenario 1: Real-time Radiotherapy Side-Effects Monitoring & Intelligent Alert System**
-
-**Patient Pain Points**:
-- 📊 Radiotherapy is high-frequency long-term treatment (6-8 weeks, 5 times/week), requires frequent hospital visits
-- ⚠️ Common side effects (skin inflammation, dysphagia, fatigue, myelosuppression) - most patients cannot identify timely
-- 🔄 Current mode: Patient subjective feeling → paper records → next review comparison, feedback lag (usually 1-2 weeks)
-- 💊 Dose adjustments rely on doctor experience, lacking personalized real-time data support
-
-**Innovation Skill Architecture**: Multi-source data ingestion (wearable + patient-reported outcomes + hospital data) → Data cleaning & temporal alignment → AI toxicity prediction (accuracy >90%) → Smart WeChat alerts (risk levels: low/medium/high) → Feedback loop
-
-**Core Metrics Table**:
-
-| Side Effect Type | Monitoring Indicator | Data Source | Alert Threshold | Intervention |
-|-----------------|-------------------|-------------|-----------------|--------------|
-| Radiation dermatitis | Skin temperature↑, photo upload | Wearable + camera MCP | Temp>38°C or erythema>20cm² | Recommend medication, cold compress |
-| Dysphagia | Food intake↓, weight↓3% | PRO questionnaire + hospital EHR | Score>3 or 1-week weight↓>1kg | Nutrition intervention, swallowing therapy |
-| Myelosuppression | WBC↓, hemoglobin↓ | Lab data auto-push | WBC<2000 or platelets<50000 | Doctor alert, possible treatment pause |
-| Radiotherapy fatigue | Activity↓, sleep quality↓ | Wearable + PRO | 7-day activity↓>30% | Exercise prescription, fatigue management |
-
-**Patient Benefits**:
-- 🎯 Passive waiting → Active monitoring: From bi-weekly review ↓ to daily real-time feedback
-- 🛡️ Occurrence → Prevention: Detect problems 24-48 hours early, reduce severe complications 65-80%
-- 📱 Multiple tools → One-stop: WeChat + App integration, no running between systems
-- 💪 Doctor decision → Shared decision: Patient understands own data, improves treatment adherence
-
----
-
-#### **Scenario 2: Multi-Channel Patient Information Integration & Smart Reminder System**
-
-**Patient Pain Points**:
-- 📋 Need to manage multiple hospitals' registration numbers, appointment schedules, medication times, follow-up dates
-- 🏥 Fragmented information: Hospital apps, WeChat, SMS, paper appointment cards, medical records
-- ❌ Easy to miss: Forget medication → abnormal blood counts; miss follow-up → treatment delay
-- 👨‍👩‍👧 Family members also need real-time patient status, but cannot see unified view
-
-**Innovation Skill Architecture**: Multi-channel data aggregation (hospital EHR + pharmacy + insurance) → Unified data model (treatment calendar, medication plan, check-list, milestones) → Context-aware reminders (personalized timing, with navigation/logistics) → Compliance monitoring (medication adherence tracker) → Visualization & decision support
-
-**Core Functionality**:
-- Radiotherapy reminder: "Tomorrow 2:00 PM, Shanxi Tumor Hospital Radiotherapy Department, 35-min drive, bring insurance card"
-- Medication reminder: "Stop nausea medication, take 1 tablet 30 min after breakfast with 250ml warm water"
-- Symptom alert trigger: "Fever >38.5°C → immediately notify patient & doctor, suggest going to ED"
-
-**Patient & Doctor Benefits**:
-- ⏰ Patient: From "can't remember" → "never miss", adherence ↑85%
-- 👨‍⚕️ Doctor: Auto-obtain patient compliance data, detect risks 3-5 days early
-- 👪 Family: Have transparent "patient status dashboard", no more anxious inquiries
-- 📊 Data: Accumulate real-world patient data for research and personalized plans
-
----
-
-#### **Scenario 3: Personalized Treatment Plan Generation & Effect Assessment System**
-
-**Patient Pain Points**:
-- 🤔 "Why did doctor choose this plan instead of others?" - Cannot understand decision rationale
-- 🔀 Multi-center consultation - different hospitals give different recommendations → confusion
-- 📈 Treatment effect assessment: CT report takes 1-2 weeks → prolonged patient anxiety
-- 💰 Treatment costs opaque: Patient doesn't know future expenses
-
-**Innovation Skill Architecture**: Patient profiling (genomic data + clinical features + lifestyle) → Multi-option comparison (3-5 treatment schemes with efficacy/OS/adverse events/cost) → Personalized recommendation engine (guideline-based + patient-factor-weighted + literature+experience data) → Patient-friendly decision support (medical-content-translator, visual outcome displays, preference elicitation) → Real-time response assessment (AI image analysis, sequential thinking for reasoning, cost tracking)
-
-**Core Benefits**:
-- 🎯 Patient: "I understand all reasons for this plan" → increases treatment commitment
-- 📊 Doctor: "Auto-generated plan comparison" → saves 30% decision time
-- 🌍 Multi-center: "Know what others chose" → reduce physician bias-induced anxiety
-- 💡 Research: "Real-world evidence data" → optimize future treatment guidelines
-
----
-
 ### III. Community Recommendations for Innovation Development Skills
 
 #### **A. Vertical Domain + Universal Workflow Combination**
@@ -1034,76 +637,6 @@ Concentrate on **domain-specific intelligent processing logic**, not infrastruct
 - ✅ Интеллектуально генерировать отчеты медицинских идей
 - ✅ Многоканальное распространение в реальном времени (внутренние системы, социальные сети, веб-сайты)
 - ✅ Поддержка нескольких языков (китайский, английский, русский и т. д.)
-
----
-
-### II-A. Сценарии инновационных навыков для пациентов с раком (управляемые болевыми точками)
-
-#### **Сценарий 1: Мониторинг побочных эффектов лучевой терапии в реальном времени и система интеллектуального оповещения**
-
-**Болевые точки пациентов**:
-- 📊 Лучевая терапия - это высокочастотное долгосрочное лечение (6-8 недель, 5 раз в неделю), требует частых посещений больницы
-- ⚠️ Распространенные побочные эффекты (кожное воспаление, дисфагия, усталость, миелосупрессия) - большинство пациентов не могут своевременно их идентифицировать
-- 🔄 Текущий режим: субъективные ощущения пациента → бумажные записи → сравнение при следующем осмотре, отсроченная обратная связь (обычно 1-2 недели)
-- 💊 Корректировка доз зависит от опыта врача, отсутствует поддержка персонализированными данными в реальном времени
-
-**Архитектура инновационного навыка**: Многоисточниковое поглощение данных (носимые устройства + отчеты пациентов + больничные данные) → Очистка и временное выравнивание данных → Предсказание токсичности на основе ИИ (точность >90%) → Умные оповещения WeChat (уровни риска: низкий/средний/высокий) → Цикл обратной связи
-
-**Таблица основных метрик**:
-
-| Тип побочного эффекта | Показатель мониторинга | Источник данных | Порог оповещения | Вмешательство |
-|---------------------|-------------------|-----------------|-----------------|--------------|
-| Лучевой дерматит | Температура кожи↑, загрузка фото | Носимое + камера MCP | Temp>38°C или эритема>20см² | Рекомендация препарата, холодный компресс |
-| Дисфагия | Прием пищи↓, вес↓3% | Анкета PRO + больничная ЭМР | Оценка>3 или потеря веса за 1 неделю>1кг | Нутритивное вмешательство, терапия глотания |
-| Миелосупрессия | WBC↓, гемоглобин↓ | Автоматическая отправка лабданных | WBC<2000 или тромбоциты<50000 | Оповещение врача, возможная пауза лечения |
-| Усталость от лучевой терапии | Активность↓, качество сна↓ | Носимое + PRO | Активность за 7 дней↓>30% | Рецепт упражнений, управление усталостью |
-
-**Преимущества для пациентов**:
-- 🎯 Пассивное ожидание → активный мониторинг: От двухнедельного осмотра ↓ к ежедневной обратной связи в реальном времени
-- 🛡️ Возникновение → профилактика: Раннее выявление проблем на 24-48 часов, снижение тяжелых осложнений на 65-80%
-- 📱 Несколько инструментов → единое решение: Интеграция WeChat + App, без перехода между системами
-- 💪 Решение врача → совместное решение: Пациент понимает свои данные, повышает приверженность лечению
-
----
-
-#### **Сценарий 2: Интеграция информации пациента по нескольким каналам и система умных напоминаний**
-
-**Болевые точки пациентов**:
-- 📋 Необходимо управлять номерами регистрации нескольких больниц, расписаниями приемов, временем приема лекарств, датами повторных посещений
-- 🏥 Разрозненная информация: приложения больниц, WeChat, SMS, бумажные карточки приемов, медицинские карты
-- ❌ Легко пропустить: забыть лекарство → аномальные показатели крови; пропустить повторный визит → задержка лечения
-- 👨‍👩‍👧 Члены семьи также нуждаются в информации о состоянии пациента в реальном времени, но не могут видеть единое представление
-
-**Архитектура инновационного навыка**: Агрегирование данных по нескольким каналам (больничная ЭМР + аптека + страховка) → Единая модель данных (календарь лечения, план приема лекарств, контрольный список, вехи) → Напоминания с учетом контекста (персонализированное время, с навигацией/логистикой) → Мониторинг соответствия (трекер приверженности к лекарствам) → Визуализация и поддержка решений
-
-**Основные функции**:
-- Напоминание о лучевой терапии: "Завтра в 14:00 отделение лучевой терапии больницы Шэньси, 35 минут в пути, возьмите страховую карту"
-- Напоминание о лекарствах: "Прекратить противорвотное, принять 1 таблетку через 30 минут после завтрака с 250 мл теплой воды"
-- Триггер оповещения о симптомах: "Лихорадка >38,5°C → немедленно уведомить пациента и врача, предложить обратиться в отделение неотложной помощи"
-
-**Преимущества для пациентов и врачей**:
-- ⏰ Пациент: От "не помню" → "никогда не пропущу", приверженность ↑85%
-- 👨‍⚕️ Врач: Автоматически получает данные о соответствии пациента, выявляет риски на 3-5 дней раньше
-- 👪 Семья: Имеет прозрачную "информационную панель пациента", без тревожных вопросов
-- 📊 Данные: Накопление реальных данных пациентов для исследований и персональных планов
-
----
-
-#### **Сценарий 3: Генерация индивидуального плана лечения и система оценки эффектов**
-
-**Болевые точки пациентов**:
-- 🤔 "Почему врач выбрал этот план, а не другой?" - Не могу понять обоснование решения
-- 🔀 Консультация в нескольких центрах - разные больницы дают разные рекомендации → путаница
-- 📈 Оценка эффективности лечения: КТ-отчет требует 1-2 недели → продленная тревога пациента
-- 💰 Прозрачность стоимости лечения: пациент не знает будущих расходов
-
-**Архитектура инновационного навыка**: Профилирование пациента (геномные данные + клинические характеристики + образ жизни) → Сравнение нескольких вариантов (3-5 схем лечения с эффективностью/ОЖ/побочными эффектами/стоимостью) → Персонализированный механизм рекомендаций (на основе руководств + взвешивание факторов пациента + литература и данные опыта) → Поддержка решений для пациентов (переводчик медицинского содержания, визуальные отображения результатов, выявление предпочтений) → Оценка реакции в реальном времени (анализ изображений ИИ, последовательное мышление для рассуждений, отслеживание затрат)
-
-**Основные преимущества**:
-- 🎯 Пациент: "Я понимаю все причины этого плана" → повышает обязательность лечения
-- 📊 Врач: "Автоматически сгенерированное сравнение планов" → экономит 30% времени на решение
-- 🌍 Мультицентр: "Знайте, что выбрали другие" → снижайте пристрастие врача к тревоге
-- 💡 Исследования: "Данные реального мира" → оптимизируйте будущие рекомендации по лечению
 
 ---
 
