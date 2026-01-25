@@ -19,6 +19,12 @@
 
 > **一句话理解本仓库**：这是 DKU-小X宝公益项目在 GitHub 上的“公共中控台”，所有团队都在这里对齐信息和进度。
 
+## 🚀 黑客松活动 (Hackathon)
+本仓库也作为 **DKU x 小X宝社区联合黑客松** 的核心协作平台。
+- **活动主题**：聚合多元力量，为医疗并发症、病情解读、心理疗愈等场景开发“落地到床边”的开源工具。
+- **快速上手**：参赛小组请务必优先阅读 [小组对齐手册 (Team Alignment Guide)](reference-docs/team-alignment-guide.md)，了解如何快速建立合作-学习-实践循环。
+
+
 ## 目录结构（当前）
 
 - **`Program_guideline/`**：项目启动与合规相关指南
@@ -40,6 +46,7 @@
   - 优先阅读：`Program_guideline/1_quick_start_and_must_know.md`。
   - 同时浏览：`Public_resources/tools_kit_101.md`，了解可用工具和资源。
 - **Step 3：对齐角色与分工**
+  - **强烈建议全员阅读**：[小组对齐手册 (Team Alignment Guide)](Public_resources/team-alignment-guide.md)，快速进入角色。
   - 在你所在项目组内部明确 Leader、备选 Leader 和各成员分工。
   - 与 Mentor 做一次期望对齐（可以在线上完成）。
 
@@ -99,6 +106,12 @@
 
 > **One-sentence summary**: This is the "public command center" for the DKU-XiaoxBao charity project on GitHub, where all teams align information and progress.
 
+## 🚀 Hackathon
+This repository also serves as the core collaboration platform for the **DKU x XiaoxBao Community Joint Hackathon**.
+- **Theme**: Aggregating diverse talents to develop open-source tools that "land at the bedside" for scenarios like complication management, medical report interpretation, and mental healing.
+- **Quick Start**: Participating teams must read the [Team Alignment Guide](reference-docs/team-alignment-guide.md) first to understand how to quickly establish a loop of cooperation, learning, and practice.
+
+
 ## Current Directory Structure
 
 - **`Program_guideline/`**: Project startup and compliance-related guidelines
@@ -120,6 +133,7 @@
   - Priority reading: `Program_guideline/1_quick_start_and_must_know.md`.
   - Also browse: `Public_resources/tools_kit_101.md` to understand available tools and resources.
 - **Step 3: Align Roles & Responsibilities**
+  - **Highly Recommended**: All members read [Team Alignment Guide](Public_resources/team-alignment-guide.md) to quickly get into role.
   - Within your project team, clarify Leader, backup Leader, and member responsibilities.
   - Have an expectation alignment session with your Mentor (can be done online).
 
@@ -179,6 +193,12 @@
 
 > **Краткое описание**: Это "общий командный центр" благотворительного проекта DKU-XiaoxBao на GitHub, где все команды согласовывают информацию и прогресс.
 
+## 🚀 Хакатон (Hackathon)
+Этот репозиторий также служит основной платформой сотрудничества для **Совместного хакатона сообщества DKU x XiaoxBao**.
+- **Тема**: Объединение различных талантов для разработки инструментов с открытым исходным кодом, которые "приземляются у постели больного" для таких сценариев, как лечение осложнений, интерпретация медицинских отчетов и душевное исцеление.
+- **Быстрый старт**: Участвующие команды должны сначала прочитать [Руководство по согласованию команд (Team Alignment Guide)](reference-docs/team-alignment-guide.md), чтобы понять, как быстро создать цикл сотрудничества, обучения и практики.
+
+
 ## Текущая структура каталогов
 
 - **`Program_guideline/`**: Руководства по запуску проекта и соответствию требованиям
@@ -200,6 +220,7 @@
   - Приоритетное чтение: `Program_guideline/1_quick_start_and_must_know.md`.
   - Также просмотрите: `Public_resources/tools_kit_101.md`, чтобы понять доступные инструменты и ресурсы.
 - **Шаг 3: Согласование ролей и обязанностей**
+  - **Настоятельно рекомендуется**: Всем участникам прочитать [Руководство по согласованию команд (Team Alignment Guide)](Public_resources/team-alignment-guide.md), чтобы быстро войти в роль.
   - В рамках вашей проектной команды определите Лидера, резервного Лидера и обязанности участников.
   - Проведите сеанс согласования ожиданий с вашим Наставником (можно онлайн).
 
