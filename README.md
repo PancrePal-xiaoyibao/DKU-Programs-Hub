@@ -1,3 +1,11 @@
+# DKU Programs Hub | DKU项目中心 | DKU Центр Проектов
+
+**Language | 语言 | Язык**: [中文](#中文) | [English](#english) | [Русский](#русский)
+
+---
+
+## 中文
+
 # DKU Programs Hub
 
 ## 仓库用途
@@ -73,3 +81,163 @@
 - 根据实践，不定期更新 `Public_resources/` 中的工具与资源链接。
 
 > 如果你是新加入的同学：从本 README 开始，再顺着 `Program_guideline/1_quick_start_and_must_know.md` 一路读下去，就能对整个 DKU-小X宝公益项目有一个比较完整的认识。
+
+---
+
+## English
+
+# DKU Programs Hub
+
+## Repository Purpose
+
+- **Target Audience**: Student teams, mentors, and Project Management Committee (PMC) members participating in the DKU-XiaoxBao community charity project.
+- **Core Functions**:
+  - **Member Guidance**: Host essential startup documents (e.g., `Program_guideline/1_quick_start_and_must_know.md`) to help newcomers quickly understand project background, roles, and compliance requirements.
+  - **Public Information Synchronization**: Centralize public resource links, recommended tools, and important announcements (e.g., `Public_resources/tools_kit_101.md`).
+  - **Project Progress Management**: Help teams align progress through project directories, progress documents, and milestone records.
+  - **Issue Handling & Collaboration**: Use GitHub Issues to coordinate requirements, bugs, feedback, and discussions.
+
+> **One-sentence summary**: This is the "public command center" for the DKU-XiaoxBao charity project on GitHub, where all teams align information and progress.
+
+## Current Directory Structure
+
+- **`Program_guideline/`**: Project startup and compliance-related guidelines
+  - `1_quick_start_and_must_know.md`: DKU-XiaoxBao Community Innovation Campus Project Quick Start & Must-Know Guide (all newcomers must read in full).
+- **`Public_resources/`**: Public resources and toolkits
+  - `tools_kit_101.md`: Community-recommended technical toolkit and resource links.
+- **`project-charts/`**: Project progress and structure diagrams (can add progress tables, architecture diagrams for different projects as needed).
+
+> If you have new project sub-repositories or documents in the future, please keep naming clear and add brief descriptions in this README.
+
+## How to Use This Repository
+
+### 1. Quick Start for New Members
+
+- **Step 1: Join Organization & Communication Channels**
+  - Ensure you've joined the project WeChat group and this GitHub organization/repository.
+  - Follow the Quick Start checklist in `Program_guideline/1_quick_start_and_must_know.md` to complete Feishu knowledge base access, XiaoxBao community volunteer registration, etc.
+- **Step 2: Read Guidelines Thoroughly**
+  - Priority reading: `Program_guideline/1_quick_start_and_must_know.md`.
+  - Also browse: `Public_resources/tools_kit_101.md` to understand available tools and resources.
+- **Step 3: Align Roles & Responsibilities**
+  - Within your project team, clarify Leader, backup Leader, and member responsibilities.
+  - Have an expectation alignment session with your Mentor (can be done online).
+
+### 2. Project Progress Management Recommendations
+
+- **Establish Clear Project Structure** (Example):
+  - Under `project-charts/<project_name>/` directory, maintain:
+    - `timeline.md` or progress table (key milestones, responsible persons, expected timelines).
+    - `notes.md` or meeting minutes.
+- **Use Issues to Track Specific Items**:
+  - For new requirements, bugs, blocking issues, compliance questions, etc., prioritize recording in Issues for Mentor and PMC tracking.
+  - Recommend using labels to distinguish: `question`, `bug`, `enhancement`, `compliance`, etc.
+
+### 3. Issue Usage Guidelines (Recommendations)
+
+- **When Creating an Issue, Include**:
+  - **Title**: Brief description of problem/requirement (e.g., `[Project A] User Interview Questionnaire Compliance Confirmation`).
+  - **Background**: Related project, scenario, current progress.
+  - **Expected Outcome**: What kind of help/decision you hope to receive (e.g., approval/rejection/modification suggestions).
+  - **Deadline (if any)**: If related to milestones, please note the time.
+- **Recommended Handling Process**:
+  - Creator assigns to corresponding project Leader or Mentor first.
+  - For complex compliance/risk issues, @ PMC members to participate in discussion.
+  - Close Issue after resolution, linking to relevant documents or code commits when necessary.
+
+## Contribution & Collaboration Conventions
+
+- **Pre-submission Checklist**:
+  - Do not upload any raw data or screenshots containing personal privacy information of patients/families.
+  - Keep naming conventions and clear structure when submitting documents for easy understanding and reuse by other teams.
+- **Recommended Collaboration Methods**:
+  - Use Pull Requests (PR) for major changes to facilitate Mentor/PMC review.
+  - Minor, low-risk document updates can be modified directly on branches, but still recommend explaining "why" in commit messages.
+
+## Future Enhancement Directions
+
+- Add separate `README` or description files for each specific project, with centralized indexing in this repository's `README`.
+- Supplement project progress templates in `project-charts/` (e.g., Gantt charts, milestone examples).
+- Regularly update tool and resource links in `Public_resources/` based on practice.
+
+> If you're a new member: Start with this README, then follow `Program_guideline/1_quick_start_and_must_know.md` to gain a comprehensive understanding of the entire DKU-XiaoxBao charity project.
+
+---
+
+## Русский
+
+# DKU Programs Hub
+
+## Назначение репозитория
+
+- **Целевая аудитория**: Студенческие команды, наставники (Mentor) и члены Комитета по управлению проектами (PMC), участвующие в благотворительном проекте сообщества DKU-XiaoxBao.
+- **Основные функции**:
+  - **Руководство для участников**: Хранение обязательных для прочтения документов (например, `Program_guideline/1_quick_start_and_must_know.md`), помогающих новым участникам быстро понять предысторию проекта, роли и требования соответствия.
+  - **Синхронизация общедоступной информации**: Централизация ссылок на общедоступные ресурсы, рекомендуемые инструменты и важные объявления (например, `Public_resources/tools_kit_101.md`).
+  - **Управление прогрессом проекта**: Помощь командам в согласовании прогресса через каталоги проектов, документы о прогрессе и записи вех.
+  - **Обработка задач и сотрудничество**: Использование GitHub Issues для координации требований, багов, обратной связи и обсуждений.
+
+> **Краткое описание**: Это "общий командный центр" благотворительного проекта DKU-XiaoxBao на GitHub, где все команды согласовывают информацию и прогресс.
+
+## Текущая структура каталогов
+
+- **`Program_guideline/`**: Руководства по запуску проекта и соответствию требованиям
+  - `1_quick_start_and_must_know.md`: Руководство для быстрого старта и обязательной информации по инновационному кампусному проекту сообщества DKU-XiaoxBao (все новые участники должны прочитать полностью).
+- **`Public_resources/`**: Общедоступные ресурсы и наборы инструментов
+  - `tools_kit_101.md`: Технический набор инструментов и ссылки на ресурсы, рекомендованные сообществом.
+- **`project-charts/`**: Графики прогресса проекта и структурные диаграммы (можно добавлять таблицы прогресса, архитектурные диаграммы для разных проектов по мере необходимости).
+
+> Если в будущем появятся новые подрепозитории проектов или документы, пожалуйста, придерживайтесь четкого именования и добавляйте краткие описания в этот README.
+
+## Как использовать этот репозиторий
+
+### 1. Быстрый старт для новых участников
+
+- **Шаг 1: Присоединение к организации и каналам коммуникации**
+  - Убедитесь, что вы присоединились к проектной группе WeChat и этой организации/репозиторию GitHub.
+  - Следуйте контрольному списку быстрого старта в `Program_guideline/1_quick_start_and_must_know.md` для получения доступа к базе знаний Feishu, регистрации в качестве волонтера сообщества XiaoxBao и т.д.
+- **Шаг 2: Внимательно прочитайте руководства**
+  - Приоритетное чтение: `Program_guideline/1_quick_start_and_must_know.md`.
+  - Также просмотрите: `Public_resources/tools_kit_101.md`, чтобы понять доступные инструменты и ресурсы.
+- **Шаг 3: Согласование ролей и обязанностей**
+  - В рамках вашей проектной команды определите Лидера, резервного Лидера и обязанности участников.
+  - Проведите сеанс согласования ожиданий с вашим Наставником (можно онлайн).
+
+### 2. Рекомендации по управлению прогрессом проекта
+
+- **Создайте четкую структуру проекта** (Пример):
+  - В каталоге `project-charts/<project_name>/` поддерживайте:
+    - `timeline.md` или таблицу прогресса (ключевые вехи, ответственные лица, ожидаемые сроки).
+    - `notes.md` или протоколы встреч.
+- **Используйте Issues для отслеживания конкретных пунктов**:
+  - Для новых требований, багов, блокирующих проблем, вопросов соответствия и т.д. приоритетно записывайте в Issues для отслеживания Наставником и PMC.
+  - Рекомендуется использовать метки для различения: `question`, `bug`, `enhancement`, `compliance` и т.д.
+
+### 3. Рекомендации по использованию Issues
+
+- **При создании Issue включайте**:
+  - **Заголовок**: Краткое описание проблемы/требования (например, `[Project A] Подтверждение соответствия анкеты для интервью с пользователями`).
+  - **Предыстория**: Связанный проект, сценарий, текущий прогресс.
+  - **Ожидаемый результат**: Какую помощь/решение вы надеетесь получить (например, одобрение/отклонение/предложения по изменению).
+  - **Крайний срок (если есть)**: Если связано с вехами, пожалуйста, укажите время.
+- **Рекомендуемый процесс обработки**:
+  - Создатель сначала назначает соответствующему Лидеру проекта или Наставнику.
+  - Для сложных вопросов соответствия/рисков @ члены PMC для участия в обсуждении.
+  - Закройте Issue после решения, при необходимости ссылаясь на соответствующие документы или коммиты кода.
+
+## Соглашения о вкладе и сотрудничестве
+
+- **Контрольный список перед отправкой**:
+  - Не загружайте никакие исходные данные или скриншоты, содержащие личную конфиденциальную информацию пациентов/семей.
+  - При отправке документов придерживайтесь соглашений об именовании и четкой структуры для легкого понимания и повторного использования другими командами.
+- **Рекомендуемые методы сотрудничества**:
+  - Используйте Pull Request (PR) для крупных изменений, чтобы облегчить проверку Наставником/PMC.
+  - Незначительные, низкорисковые обновления документов могут быть изменены непосредственно в ветках, но все же рекомендуется объяснять "почему" в сообщениях коммитов.
+
+## Направления будущего улучшения
+
+- Добавить отдельные файлы `README` или описания для каждого конкретного проекта с централизованной индексацией в `README` этого репозитория.
+- Дополнить шаблоны прогресса проекта в `project-charts/` (например, диаграммы Ганта, примеры вех).
+- Регулярно обновлять ссылки на инструменты и ресурсы в `Public_resources/` на основе практики.
+
+> Если вы новый участник: Начните с этого README, затем следуйте `Program_guideline/1_quick_start_and_must_know.md`, чтобы получить всестороннее понимание всего благотворительного проекта DKU-XiaoxBao.
