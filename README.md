@@ -1,4 +1,4 @@
-# DKU Programs Hub | DKU项目中心 | DKU Центр Проектов
+# DKU x xiao-x-bao Programs Hub | DKU x 小x宝创新项目中心 | DKU Центр Проектов
 
 **Language | 语言 | Язык**: [中文](#中文) | [English](#english) | [Русский](#русский)
 
@@ -6,7 +6,7 @@
 
 ## 中文
 
-# DKU Programs Hub
+# DKU x 小x宝联合创新项目Hub
 
 ## 仓库用途
 
@@ -24,9 +24,9 @@
 - **`Program_guideline/`**：项目启动与合规相关指南
   - `1_quick_start_and_must_know.md`：DKU-小X宝社区创新校园项目 Quick Start & Must-Know 指南（新加入同学务必完整阅读）。
 - **`Public_resources/`**：公共资源与工具箱
-   - `tools_kit_101.md`：社区推荐的技术工具箱与资源链接。
-   - `Innovation_Scenarios_Guide.md`：**【新加入学生必读】** AI Coding创新应用场景指南（6个真实患者痛点场景，快速激发创新灵感）。
-   - `AI_Coding_Innovation_Skill_Trends.md`：AI Coding社区Skill热度分析与详细架构方案（包含代码示例）。
+  - `tools_kit_101.md`：社区推荐的技术工具箱与资源链接。
+  - `Innovation_Scenarios_Guide.md`：**【新加入学生必读】** AI Coding创新应用场景指南（6个真实患者痛点场景，快速激发创新灵感）。
+  - `AI_Coding_Innovation_Skill_Trends.md`：AI Coding社区Skill热度分析与详细架构方案（包含代码示例）。
 - **`project-charts/`**：项目进度与结构图（可根据需要补充不同项目的进度表、架构图等）。
 
 > 后续如果有新的项目子仓库或文档，请尽量保持命名清晰，并在本 README 中补充简要说明。
@@ -106,9 +106,9 @@
 - **`Program_guideline/`**: Project startup and compliance-related guidelines
   - `1_quick_start_and_must_know.md`: DKU-XiaoxBao Community Innovation Campus Project Quick Start & Must-Know Guide (all newcomers must read in full).
 - **`Public_resources/`**: Public resources and toolkits
-   - `tools_kit_101.md`: Community-recommended technical toolkit and resource links.
-   - `Innovation_Scenarios_Guide.md`: **【MUST READ for New Students】** AI Coding Innovation Scenarios Guide (6 real patient pain-point scenarios to quickly inspire innovation ideas).
-   - `AI_Coding_Innovation_Skill_Trends.md`: AI Coding Community Skill Trends Analysis & Detailed Architecture Solutions (includes code examples).
+  - `tools_kit_101.md`: Community-recommended technical toolkit and resource links.
+  - `Innovation_Scenarios_Guide.md`: **【MUST READ for New Students】** AI Coding Innovation Scenarios Guide (6 real patient pain-point scenarios to quickly inspire innovation ideas).
+  - `AI_Coding_Innovation_Skill_Trends.md`: AI Coding Community Skill Trends Analysis & Detailed Architecture Solutions (includes code examples).
 - **`project-charts/`**: Project progress and structure diagrams (can add progress tables, architecture diagrams for different projects as needed).
 
 > If you have new project sub-repositories or documents in the future, please keep naming clear and add brief descriptions in this README.
@@ -170,11 +170,11 @@
 
 ## Русский
 
-# DKU Programs Hub
+# DKU x 小x宝创新项目中心 | DKU Центр Проектов
 
 ## Назначение репозитория
 
-- **Целевая аудитория**: Студенческие команды, наставники (Mentor) и члены Комитета по управлению проектами (PMC), участвующие в благотворительном проекте сообщества DKU-XiaoxBao.
+- **Целевая аудитория**: Студенческие команды, наставники (Mentor) и члены Комитета по управлению проектами (PMC), участвующие в совместном инновационном благотворительном проекте DKU-小X宝.
 - **Основные функции**:
   - **Руководство для участников**: Хранение обязательных для прочтения документов (например, `Program_guideline/1_quick_start_and_must_know.md`), помогающих новым участникам быстро понять предысторию проекта, роли и требования соответствия.
   - **Синхронизация общедоступной информации**: Централизация ссылок на общедоступные ресурсы, рекомендуемые инструменты и важные объявления (например, `Public_resources/tools_kit_101.md`).
@@ -188,9 +188,9 @@
 - **`Program_guideline/`**: Руководства по запуску проекта и соответствию требованиям
   - `1_quick_start_and_must_know.md`: Руководство для быстрого старта и обязательной информации по инновационному кампусному проекту сообщества DKU-XiaoxBao (все новые участники должны прочитать полностью).
 - **`Public_resources/`**: Общедоступные ресурсы и наборы инструментов
-   - `tools_kit_101.md`: Технический набор инструментов и ссылки на ресурсы, рекомендованные сообществом.
-   - `Innovation_Scenarios_Guide.md`: **【ОБЯЗАТЕЛЬНОЕ ЧТЕНИЕ ДЛЯ НОВЫХ СТУДЕНТОВ】** Руководство по инновационным сценариям AI Coding (6 реальных сценариев болевых точек пациентов для быстрого вдохновления инноваций).
-   - `AI_Coding_Innovation_Skill_Trends.md`: Анализ тенденций и детальные архитектурные решения навыков сообщества AI Coding (включает примеры кода).
+  - `tools_kit_101.md`: Технический набор инструментов и ссылки на ресурсы, рекомендованные сообществом.
+  - `Innovation_Scenarios_Guide.md`: **【ОБЯЗАТЕЛЬНОЕ ЧТЕНИЕ ДЛЯ НОВЫХ СТУДЕНТОВ】** Руководство по инновационным сценариям AI Coding (6 реальных сценариев болевых точек пациентов для быстрого вдохновления инноваций).
+  - `AI_Coding_Innovation_Skill_Trends.md`: Анализ тенденций и детальные архитектурные решения навыков сообщества AI Coding (включает примеры кода).
 - **`project-charts/`**: Графики прогресса проекта и структурные диаграммы (можно добавлять таблицы прогресса, архитектурные диаграммы для разных проектов по мере необходимости).
 
 > Если в будущем появятся новые подрепозитории проектов или документы, пожалуйста, придерживайтесь четкого именования и добавляйте краткие описания в этот README.
