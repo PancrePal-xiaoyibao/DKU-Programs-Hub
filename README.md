@@ -17,7 +17,7 @@
   - `1_quick_start_and_must_know.md`：DKU-小X宝社区创新校园项目 Quick Start & Must-Know 指南（新加入同学务必完整阅读）。
 - **`Public_resources/`**：公共资源与工具箱
   - `tools_kit_101.md`：社区推荐的技术工具箱与资源链接。
-- **`Project_charts/`**：项目进度与结构图（可根据需要补充不同项目的进度表、架构图等）。
+- **`project-charts/`**：项目进度与结构图（可根据需要补充不同项目的进度表、架构图等）。
 
 > 后续如果有新的项目子仓库或文档，请尽量保持命名清晰，并在本 README 中补充简要说明。
 
@@ -38,7 +38,7 @@
 ### 2. 项目进度管理建议
 
 - **按项目建立清晰结构**（示例）：
-  - `Project_charts/<project_name>/` 目录下，维护：
+  - `project-charts/<project_name>/` 目录下，维护：
     - `timeline.md` 或进度表（关键里程碑、负责人、预期时间）。
     - `notes.md` 或会议纪要。
 - **使用 Issue 跟踪具体事项**：
@@ -69,7 +69,7 @@
 ## 后续可以继续完善的方向
 
 - 为每个具体项目增加单独的 `README` 或说明文件，并在本仓库 `README` 中集中索引。
-- 补充 `Project_charts/` 中的项目进度模板（例如甘特图、里程碑示例）。
+- 补充 `project-charts/` 中的项目进度模板（例如甘特图、里程碑示例）。
 - 根据实践，不定期更新 `Public_resources/` 中的工具与资源链接。
 
 > 如果你是新加入的同学：从本 README 开始，再顺着 `Program_guideline/1_quick_start_and_must_know.md` 一路读下去，就能对整个 DKU-小X宝公益项目有一个比较完整的认识。
